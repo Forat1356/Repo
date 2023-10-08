@@ -8,7 +8,7 @@ permissions:
   contents: read
 env:
    AZURE_WEBAPP_NAME: app1356
-   AZURE_WEBAPP_PACKAGE_PATH: BlazorApp1
+   AZURE_WEBAPP_PACKAGE_PATH: BlazorApp1/
    DOTNET_VERSION: 6.0.x
 
 jobs:
