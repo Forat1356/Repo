@@ -10,7 +10,7 @@ jobs:
        sql1:
          image: mcr.microsoft.com/mssql/server:2022-latest  
          ports: 
-           - 1440:1440 
+           - 1440:1440  
 
        redis:
          image: redis
