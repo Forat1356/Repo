@@ -24,8 +24,8 @@ jobs:
           password: 3NGS6Zt4ZNHIpD/N7xHoZGkh/Au6KCbbaTwQf8dTvL+ACRBDNk6z
     
       - run: |
-          docker build ./BlazorApp1 -t acr1356.azurecr.io/myapp:v2
-          docker push acr1356.azurecr.io/myapp:v2   
+          docker build ./BlazorApp1 -t acr1356.azurecr.io/myapp:${{github.sha}}
+          docker push acr1356.azurecr.io/myapp:${{github.sha}}   
             - name: Azure Login
       - name: Login to Azure
         uses: Azure/login@v1
@@ -40,5 +40,5 @@ jobs:
         with:
             app-name: 'app1356'
        #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-            images: 'acr1356.azurecr.io/myapp:v2'       
+            images: 'acr1356.azurecr.io/myapp:${{github.sha}}'       
      
