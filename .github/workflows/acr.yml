@@ -25,8 +25,8 @@ jobs:
     
       - run: |
           docker build ./BlazorApp1 -t acr1356.azurecr.io/myapp:v2
-          docker push acr1356.azurecr.io/myapp:v2   
-            - name: Azure Login
+          docker push acr1356.azurecr.io/myapp:v2  
+
       - name: Login to Azure
         uses: Azure/login@v1
         with:

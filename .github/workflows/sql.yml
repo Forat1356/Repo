@@ -1,0 +1,25 @@
+name: Container Pipeline
+
+on:
+  workflow_dispatch:
+
+permissions:
+ id-token: write
+ contents: write 
+ 
+jobs:
+   sql:
+     runs-on: [self-hosted, Linux]
+    
+
+     steps:
+      - name: Azure PowerShell Action
+        uses: Azure/powershell@v1
+        with:
+    # Specify the Az PowerShell script here.
+          inlineScript: |
+            docker run --name sqlenterprise -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=Nafisa1356$' -e 'MSSQL_PID=EnterpriseCore' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+    # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
+          azPSVersion: 7.3
+    
+
