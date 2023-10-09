@@ -26,6 +26,6 @@ jobs:
     
       - run: |
           docker build ./BlazorApp1 -t acr1356.azurecr.io/myapp:${{ github.sha }}
-          docker push acer.azurecr.io/myapp:${{ github.sha }}   
+          docker push acr1356.azurecr.io/myapp:${{ github.sha }}   
       
      
