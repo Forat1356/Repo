@@ -1,0 +1,19 @@
+name: Container Pipeline
+
+on:
+  workflow_dispatch:
+
+
+
+jobs:
+   Build:
+     runs-on: [self-hosted,Linux]
+     steps:
+      - uses: actions/checkout@v2
+   
+      - run: |
+          docker build ./BlazorApp1 -t acr1356.azurecr.io/myapp:v2
+          docker run -p 433:433 -d acr1356.azurecr.io/myapp:v2
+           
+   
+     
