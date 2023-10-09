@@ -21,7 +21,7 @@ jobs:
     # Specify the Az PowerShell script here.
          inlineScript: |
            get-process
-           write-hosts " hello Thomas"
+           write-host " hello Thomas"
     # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
          azPSVersion: 7.3.0
     # Select the value of the ErrorActionPreference variable for executing the script. Options: stop, continue, silentlyContinue. Default is Stop.
