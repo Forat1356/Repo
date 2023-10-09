@@ -5,7 +5,7 @@ on:
 
 jobs:
    sql:
-     runs-on: ubuntu-latest
+     runs-on: [self-hosted, Linux]
      services:
        sql1:
          image: mcr.microsoft.com/mssql/server:2022-latest  
