@@ -5,7 +5,7 @@ on:
 
 jobs:
    sql:
-     runs-on: [self-hosted, windows]
+     runs-on: [self-hosted, Windows]
      services:
        sql:
          image: mcr.microsoft.com/mssql/server:2022-latest  
