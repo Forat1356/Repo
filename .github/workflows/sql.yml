@@ -3,6 +3,10 @@ name: Container Pipeline
 on:
   workflow_dispatch:
 
+permissions:
+ id-token: write
+ contents: write
+ 
 jobs:
    sql:
      runs-on: [self-hosted, Linux]
