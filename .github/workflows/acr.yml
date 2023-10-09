@@ -26,5 +26,19 @@ jobs:
       - run: |
           docker build ./BlazorApp1 -t acr1356.azurecr.io/myapp:v2
           docker push acr1356.azurecr.io/myapp:v2   
-      
+            - name: Azure Login
+      - name: Login to Azure
+        uses: Azure/login@v1
+        with:
+             client-id:  "1b648961-aabc-49fb-96be-5436e0038d7c"
+             tenant-id:  "58bade9d-b753-4cdd-bea4-6183f95a1ce5"
+             subscription-id: "02cd8bbf-2d3c-4eed-9c95-cf75af7acd37"
+             enable-AzPSSession: true
+
+      - name: Deploy to App service
+        uses: azure/webapps-deploy@v2
+        with:
+            app-name: 'app1356'
+       #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+            images: 'acr1356.azurecr.io/myapp:v2'       
      
