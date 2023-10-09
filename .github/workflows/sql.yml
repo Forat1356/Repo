@@ -7,10 +7,10 @@ jobs:
    sql:
      runs-on: [self-hosted, Linux]
      services:
-      # sql1:
-       #  image: mcr.microsoft.com/mssql/server:2022-latest  
-        # ports: 
-         #  - 1440:1440
+       sql1:
+         image: mcr.microsoft.com/mssql/server:2022-latest  
+         ports: 
+           - 1440:1440
 
        redis:
          image: redis
