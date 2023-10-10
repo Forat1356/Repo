@@ -11,9 +11,11 @@ jobs:
      steps:
       - uses: actions/checkout@v2
    
-      - run: |
-          docker build ./BlazorApp1 -t acr1356.azurecr.io/myapp:v2
-          docker run -p 82:82 -d acr1356.azurecr.io/myapp:v2  
-           
+     
+      - name: SonarCloud Scan
+        
+        uses: SonarSource/sonarcloud-github-action@v2.0.2
+        with:
+          projectBaseDir: ./BlazorApp1       
    
      
