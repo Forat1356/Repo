@@ -10,6 +10,11 @@ jobs:
       - shell: pwsh
         run: |
           $user="tzebar@thomaszebargmail.onmicrosoft.com"
+          $pwd= ${{secrets.mypassword}}
+          $credential = New-object -typename system.management.automation.pscredential -argumentlist $user, $pword
+          login-azaccount -credential  $credential
+          set-azcontext -subscription subscription1
+          get-azresourcegroup
           
           
     
