@@ -17,7 +17,7 @@ jobs:
      steps:
        -  name: step1 
           run: |
-            export lol="loleeeee"
+            lol="loleeeee"
             echo $AZURE_WEBAPP_NAME
             AZURE_WEBAPP_NAME="thomas"
             echo $AZURE_WEBAPP_NAME
