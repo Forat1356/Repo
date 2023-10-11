@@ -21,6 +21,7 @@ jobs:
             echo $AZURE_WEBAPP_NAME
             AZURE_WEBAPP_NAME="thomas"
             echo $AZURE_WEBAPP_NAME
+            echo $lol
        -  name: steps2 
           run: |
              echo $AZURE_WEBAPP_NAME
