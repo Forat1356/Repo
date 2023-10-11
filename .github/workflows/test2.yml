@@ -7,6 +7,10 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - name: install azure cli
+        shell: bash
+        run: |
+          sudo apt install azure-cli
       - name: Azure Login
         uses: Azure/login@v1.4.6
         with:
