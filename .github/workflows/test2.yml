@@ -11,6 +11,7 @@ jobs:
         run: |
           $user="tzebar@thomaszebargmail.onmicrosoft.com"
           $pwd= ${{secrets.mypassword}}
+          $pword = convertto-securestring -string $pwd -Asplaintext -force
           $credential = New-object -typename system.management.automation.pscredential -argumentlist $user, $pword
           login-azaccount -credential  $credential
           set-azcontext -subscription subscription1
