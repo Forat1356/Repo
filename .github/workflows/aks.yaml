@@ -13,7 +13,10 @@ env:
 
 jobs:
    Build:
+    
      runs-on: ubuntu-latest
+     env:
+       jobenv1: "jobe11111"
      steps:
        -  name: step1 
           run: |
@@ -22,7 +25,13 @@ jobs:
             AZURE_WEBAPP_NAME="thomas"
             echo $AZURE_WEBAPP_NAME
             echo $lol
-       -  name: steps2 
+            echo $jobenv1
+       -  name: step2
+          env:
+            hello: "HHHHHHHH"
+       -  name: steps23 
           run: |
              echo $AZURE_WEBAPP_NAME
              echo $lol
+             echo $jobenv1
+             echo $hello
