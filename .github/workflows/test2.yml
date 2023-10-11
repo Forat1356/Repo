@@ -13,7 +13,7 @@ jobs:
           $pwd= "${{secrets.mypassword}}"
           $pword = convertto-securestring -string $pwd -Asplaintext -force
           $credential = New-object -typename system.management.automation.pscredential -argumentlist $user, $pword
-          install-module AZ
+          install-module AZ -force
           login-azaccount -credential  $credential
           set-azcontext -subscription subscription1
           get-azresourcegroup
